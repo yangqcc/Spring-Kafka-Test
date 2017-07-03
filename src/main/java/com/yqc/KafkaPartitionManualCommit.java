@@ -14,8 +14,9 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * Created by yangqc on 2017/7/3.
+ * kafka每个分区分开提交
  */
-public class KafkaPositoinManualCommit {
+public class KafkaPartitionManualCommit {
 
     private static AtomicBoolean running = new AtomicBoolean(true);
 
@@ -37,7 +38,7 @@ public class KafkaPositoinManualCommit {
                 for (TopicPartition partition : records.partitions()) {
                     List<ConsumerRecord<String, String>> partitionRecords = records.records(partition);
                     for (ConsumerRecord<String, String> record : partitionRecords) {
-                        System.out.println(record.offset() + ": " + record.value());
+                        System.out.println("分区:" + partition.partition() + " , 偏移量: " + record.offset() + " , 值: " + record.value());
                     }
                     long lastOffset = partitionRecords.get(partitionRecords.size() - 1).offset();
                     consumer.commitSync(Collections.singletonMap(partition, new OffsetAndMetadata(lastOffset + 1)));
