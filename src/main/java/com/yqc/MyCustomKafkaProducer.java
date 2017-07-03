@@ -4,6 +4,8 @@ import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.Producer;
 import org.apache.kafka.clients.producer.ProducerRecord;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
 
 /**
@@ -22,8 +24,9 @@ public class MyCustomKafkaProducer {
         props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
 
         Producer<String, String> producer = new KafkaProducer<>(props);
-        for (int i = 0; i < 100; i++)
-            producer.send(new ProducerRecord<>("102937163796092928", Integer.toString(i), Integer.toString(i)));
+        for (int i = 0; i < 10; i++) {
+            producer.send(new ProducerRecord<>("foo", Integer.toString(i), "{Humidity : 90,Temperature:89}"));
+        }
         producer.close();
     }
 }
