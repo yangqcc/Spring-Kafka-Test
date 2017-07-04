@@ -11,7 +11,7 @@ import java.util.Properties;
  * Created by yangqc on 2017/6/7.
  */
 public class CustomKafkaCustomer {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Properties props = new Properties();
         props.put("bootstrap.servers", "localhost:9092");
         props.put("group.id", "test");
@@ -22,9 +22,16 @@ public class CustomKafkaCustomer {
         KafkaConsumer<String, String> consumer = new KafkaConsumer<>(props);
         consumer.subscribe(Arrays.asList("foo", "bar"));
         while (true) {
-            ConsumerRecords<String, String> records = consumer.poll(100);
-            for (ConsumerRecord<String, String> record : records)
+            int i = 0;
+            ConsumerRecords<String, String> records = consumer.poll(5000);
+            System.out.println("polled!");
+            for (ConsumerRecord<String, String> record : records) {
+                i++;
                 System.out.printf("offset = %d, key = %s, value = %s%n", record.offset(), record.key(), record.value());
+           /*     if (i == records.count()) {
+                    Thread.sleep(100000);
+                }*/
+            }
         }
     }
 }

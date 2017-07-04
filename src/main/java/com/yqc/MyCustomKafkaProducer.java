@@ -24,7 +24,8 @@ public class MyCustomKafkaProducer {
         props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
 
         Producer<String, String> producer = new KafkaProducer<>(props);
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 2; i++) {
+            //cityos_8b41739e-3cdb-4e46-ac90-681950be2c03_377922db-d3db-4967-bc0f-6179efa81bf6
             producer.send(new ProducerRecord<>("foo", Integer.toString(i), "{Humidity : 90,Temperature:89}"));
         }
         producer.close();
