@@ -1,11 +1,9 @@
-package com.yqc;
+package com.yqc.basic;
 
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.Producer;
 import org.apache.kafka.clients.producer.ProducerRecord;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Properties;
 
 /**
@@ -22,11 +20,10 @@ public class MyCustomKafkaProducer {
         props.put("buffer.memory", 33554432);
         props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
         props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
-
+        props.put("partitioner.class", "com.yqc.multithread.custompartition.MySamplePartitioner");
         Producer<String, String> producer = new KafkaProducer<>(props);
         for (int i = 0; i < 10; i++) {
-            //cityos_8b41739e-3cdb-4e46-ac90-681950be2c03_377922db-d3db-4967-bc0f-6179efa81bf6
-            producer.send(new ProducerRecord<>("foo", Integer.toString(i), "{Humidity : 90,Temperature:89}"));
+            producer.send(new ProducerRecord<>("foo", Integer.toString(i), "{Humidity:90, Temperature:89}" + i));
         }
         producer.close();
     }
