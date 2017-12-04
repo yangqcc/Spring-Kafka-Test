@@ -4,6 +4,7 @@ import org.apache.kafka.clients.consumer.ConsumerRecord;
 
 /**
  * Created by yangqc on 2017/7/25
+ * @author yangqc
  */
 public class Worker implements Runnable {
 

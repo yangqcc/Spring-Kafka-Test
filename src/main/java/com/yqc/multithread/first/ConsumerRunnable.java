@@ -9,6 +9,7 @@ import java.util.Properties;
 
 /**
  * Created by yangqc on 2017/7/25
+ * @author yangqc
  */
 public class ConsumerRunnable implements Runnable {
 

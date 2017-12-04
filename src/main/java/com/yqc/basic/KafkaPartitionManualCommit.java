@@ -13,7 +13,9 @@ import java.util.Properties;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
- * Created by yangqc on 2017/7/3.
+ *
+ * @author yangqc
+ * @date 2017/7/3
  * kafka每个分区分开提交
  */
 public class KafkaPartitionManualCommit {

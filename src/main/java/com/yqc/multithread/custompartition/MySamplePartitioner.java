@@ -10,6 +10,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Created by yangqc on 2017/7/25
+ * @author yangqc
  */
 public class MySamplePartitioner implements Partitioner {
 
@@ -32,6 +33,7 @@ public class MySamplePartitioner implements Partitioner {
         return number & 0x7fffffff;
     }
 
+    @Override
     public void configure(Map<String, ?> configs) {
     }
 

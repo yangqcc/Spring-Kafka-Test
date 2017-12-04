@@ -13,6 +13,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * Created by yangqc on 2017/7/25
+ * @author yangqc
  */
 public class ConsumerHandler {
 
