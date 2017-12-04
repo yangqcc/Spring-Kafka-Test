@@ -8,8 +8,8 @@ import java.util.List;
 import java.util.Properties;
 
 /**
- * Created by yangqc on 2017/7/25
  * @author yangqc
+ * @date 2017/7/25
  */
 public class ConsumerRunnable implements Runnable {
 

@@ -12,8 +12,8 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Created by yangqc on 2017/7/25
  * @author yangqc
+ * @date 2017/7/25
  */
 public class ConsumerHandler {
 

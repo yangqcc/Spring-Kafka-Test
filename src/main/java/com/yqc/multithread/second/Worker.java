@@ -3,8 +3,8 @@ package com.yqc.multithread.second;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 
 /**
- * Created by yangqc on 2017/7/25
  * @author yangqc
+ * @date 2017/7/25
  */
 public class Worker implements Runnable {
 

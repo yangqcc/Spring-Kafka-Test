@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by yangqc on 2017/7/25
  * @author yangqc
+ * @date 2017/7/25
  */
 public class RunMain {
     public static void main(String[] args) {
