@@ -1,19 +1,21 @@
 package com.yqc.tx.entity;
 
+import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
-import java.util.Date;
-
+/**
+ * @author yangqc
+ */
 @Data
 @AllArgsConstructor
 public class MyBook {
 
-    private int id;
+  private int id;
 
-    private String title;
+  private String title;
 
-    private String author;
+  private String author;
 
-    private Date submission_date;
+  private Date submission_date;
 }
