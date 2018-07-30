@@ -6,3 +6,4 @@ jedis-test/jedis-test.iml
 kafka-test/kafka-test.iml
 jedis-test.iml
 
+tx-test/tx-test.iml
