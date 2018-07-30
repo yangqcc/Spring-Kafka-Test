@@ -2,3 +2,7 @@
 .idea/
 Spring-Kafka-Test.iml
 target/
+jedis-test/jedis-test.iml
+kafka-test/kafka-test.iml
+jedis-test.iml
+
